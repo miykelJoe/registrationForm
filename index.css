@@ -22,10 +22,6 @@ body{
     background-color: var(--Red);
     background-image: url(images/bg-intro-mobile.png);
     background-blend-mode: lighten;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6.5em 3em 0;
 }
 
 main#main{
@@ -34,7 +30,7 @@ main#main{
     grid-template-areas: 
     'textContainer'
     'form';
-    gap: 2em;
+    gap: 3.5em;
 }
 
 main#main #textContainer{
@@ -137,14 +133,28 @@ main .form .formContainer form #tableFooter b {
 }
 
 @media (min-width: 375px) {
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5.5em 1em 0;
+    }
     main#main #textContainer{
-        max-width: 375px;
+        max-width: 330px;
     }
     
     main#main #textContainer h1#text{
         width: 100%;
         margin-bottom: .5em;
         font-weight: 700;
+    }
+
+    main#main #textContainer p{
+        text-align: center;
+    }
+
+    main#main .form{
+        max-width: 330px;
     }
 }
 
@@ -177,6 +187,10 @@ main .form .formContainer form #tableFooter b {
         margin-bottom: .5em;
         font-weight: 700;
         font-size: 3.2rem;
+    }
+
+    main#main #textContainer p{
+        text-align: left;
     }
 
     main#main .form{

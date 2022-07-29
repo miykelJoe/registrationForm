@@ -1,4 +1,4 @@
-:root{
+:root {
     /* Primary colors */
     --Red: hsl(0, 100%, 74%);
     --Green: hsl(154, 59%, 51%);
@@ -9,399 +9,181 @@
     /* Neutral */
     --darkBlue: hsl(249, 10%, 26%);
     --grayishBlue: hsl(246, 25%, 77%);
+    --white: hsl(0, 0%, 98%);
 }
 
-  * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--Red);
+    background-image: url(images/bg-intro-mobile.png);
+    background-blend-mode: lighten;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6.5em 3em 0;
+}
+
+main#main{
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    'textContainer'
+    'form';
+    gap: 2em;
+}
+
+main#main #textContainer{
+    grid-area: textContainer;
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+main#main #textContainer h1#text{
+    margin-bottom: .5em;
+    font-weight: 700;
+    line-height: 1.2em;
+}
+
+main#main #textContainer p#para {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+main#main .form{
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 5em;
+}
+
+main .form .trial {
+    background-color: var(--Blue);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding: 1em 3em;
+    text-align: center;
+    margin: 0 0 1.3em 0;
+    border-radius: .4em;
+    box-shadow: 0px 5px 0px 1px rgba(0, 0, 0, 0.237);
+}
+
+main .form .formContainer{
+    background-color: var(--white);
+    border-radius: .5em;
+}
+
+main .form .formContainer form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .8em;
+}
+
+main .form .formContainer form table{
+    border-spacing: 10px;
+    width: 100%;
+}
+
+main .form .formContainer form table tr th input{
+    border: 1px solid rgb(164, 164, 164);
+    border-radius: .4em;
+    padding: 1.3em;
+    width: 100%;
+    margin: .3em 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    outline: none;
+}
+
+main .form .formContainer form table tr th input:hover {
+    border: 1px solid rgb(77, 77, 77);
+}
+
+main .form .formContainer form table tr th input.btn {
+    background-color: var(--Green);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0px 3px 0px 1px hsl(154, 59%, 45%);
+}
+
+
+main .form .formContainer form #tableFooter {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    text-align: center;
+    color: rgb(82, 82, 82);
+    width: 80%;
+}
+
+main .form .formContainer form #tableFooter b {
+    color: var(--Red);
+}
+
+@media (min-width: 375px) {
+    main#main #textContainer{
+        max-width: 375px;
     }
     
-    body {
-        background-color: var(--Red);
-    }
-    
-    main {
-        background-image: url(images/bg-intro-mobile.png);
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 1.5em;
-    }
-    
-    main#main #textContainer {
-        color: hsl(0, 0%, 98%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 450px;
-        margin-bottom: 50px;
-    }
-    
-    main #textContainer h1#text {
-        text-align: center;
+    main#main #textContainer h1#text{
+        width: 100%;
         margin-bottom: .5em;
-        font-family: 'Poppins', sans-serif;
         font-weight: 700;
     }
-    
-    main #textContainer p#para {
-        text-align: center;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-    }
-    
-    main .form {
-        width: 450px;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-    }
-    
-    main .form .trial {
-        background-color: var(--Blue);
-        color: #fff;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        height: 5em;
-        margin-bottom: 1em;
-        padding: 0 .3em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: .4em;
-        box-shadow: 0px 5px 0px 1px rgba(0, 0, 0, 0.237);
-    }
-    main .form .trial .trialText{
-        text-align: center;
-    }
-    
-    main .form .formContainer {
-        background-color: hsl(0, 0%, 98%);
-        height: fit-content;
-        margin-bottom: 6em;
-        padding: 1.5em;
-        border-radius: .5em;
-        box-shadow: 0px 5px 0px 1px rgba(0, 0, 0, 0.237);
-    }
-    
-    main .form .formContainer form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    main .form .formContainer form table {
-        width: 100%;
-        background-color: none;
-        border-spacing: 10px;
-    }
-    
-    main .form .formContainer form table tr th input {
-        border: 1px solid rgb(164, 164, 164);
-        border-radius: .3em;
-        padding: 1em;
-        width: 100%;
-    }
-    
-    main .form .formContainer form table tr th input:hover {
-        border: 1px solid rgb(77, 77, 77);
-        padding: 1em;
-        width: 100%;
-    }
-    
-    main .form .formContainer form table tr th input.btn {
-        background-color: var(--Green);
-        color: #fff;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        border-radius: .5em;
-        border: none;
-        box-shadow: 0px 1px 2px 1px hsl(154, 59%, 41%),
-            0px -1px 2px 1px hsl(154, 59%, 41%);
-    }
-    
-    main .form .formContainer form table tr th input.btn:hover {
-        background-color: hsl(154, 59%, 41%);
-    }
-    
-    main .form .formContainer form #tableFooter {
-        text-align: center;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 400;
-        font-size: 10px;
-        width: 85%;
-        color: rgb(82, 82, 82);
-    }
-    
-    main .form .formContainer form #tableFooter b {
-        color: var(--Red);
-    }
+}
 
-@media (min-width: 1440px){
-   * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
+@media (min-width: 1440px) {
+    body{
         background-color: var(--Red);
-    }
-
-    main#main {
         background-image: url(images/bg-intro-desktop.png);
-        height: 100vh;
+        background-blend-mode: lighten;
         display: flex;
-        justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
-        padding: 1.5em;
+        justify-content: center;
+        padding: 7.5em 10em 0;
     }
 
-    main #textContainer {
-        color: hsl(0, 0%, 98%);
-        height: 40%;
-        display: flex;
-        flex-direction: column;
-        width: 450px;
-        margin: 0 50px;
+    main#main{
+    display: grid;
+    grid-template-areas: 
+    'textContainer form';
+    gap: 2em;
     }
 
-    main#main #textContainer h1#text {
-        margin-bottom: .5em;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        display: flex;
+    main#main #textContainer{
+        max-width: 550px;
         text-align: left;
-    }
-
-    main#main #textContainer p#para {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-        text-align: left;
-    }
-
-    main .form {
-        height: 65%;
-        width: 450px;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        margin: 0 50px;
-    }
-
-    main .form .trial {
-        background-color: var(--Blue);
-        color: #fff;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        height: 5em;
-        margin-bottom: 1em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: .4em;
-        box-shadow: 0px 5px 0px 1px rgba(0, 0, 0, 0.237);
-    }
-
-    main .form .formContainer {
-        background-color: hsl(0, 0%, 98%);
-        height: fit-content;
-        margin-bottom: 4em;
-        padding: 1.5em;
-        border-radius: .5em;
-        box-shadow: 0px 5px 0px 1px rgba(0, 0, 0, 0.237);
-    }
-
-    main .form .formContainer form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    main .form .formContainer form table {
-        width: 100%;
-        background-color: none;
-        border-spacing: 10px;
-    }
-
-    main .form .formContainer form table tr th input {
-        border: 1px solid rgb(164, 164, 164);
-        border-radius: .3em;
-        padding: 1em;
-        width: 100%;
-    }
-
-    main .form .formContainer form table tr th input:hover {
-        border: 1px solid rgb(77, 77, 77);
-        padding: 1em;
-        width: 100%;
-    }
-
-    main .form .formContainer form table tr th input.btn {
-        background-color: var(--Green);
-        color: #fff;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        border-radius: .5em;
-        border: none;
-        box-shadow: 0px 1px 2px 1px hsl(154, 59%, 41%),
-            0px -1px 2px 1px hsl(154, 59%, 41%);
-
-    }
-
-    main .form .formContainer form #tableFooter {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 400;
-        font-size: 10px;
-        color: rgb(82, 82, 82);
-    }
-
-    main .form .formContainer form #tableFooter b {
-        color: var(--Red);
-    }    
-    }
-
-@media (min-width: 375px){
-  * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        background-color: var(--Red);
-    }
-
-    main {
-        background-image: url(images/bg-intro-mobile.png);
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 1.5em;
-    }
-
-    main #textContainer {
-        color: hsl(0, 0%, 98%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 450px;
-        margin-right: 0 50px;
-    }
-
-    main #textContainer h1#text {
-        text-align: center;
-        margin-bottom: .5em;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-    }
-
-    main #textContainer p#para {
-        text-align: center;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        font-size: 16px;
-    }
-
-    main .form {
-        width: 450px;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        margin: 0 50px;
-    }
-
-    main .form .trial {
-        background-color: var(--Blue);
-        color: #fff;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        height: 5em;
-        margin-bottom: 1em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: .4em;
-        box-shadow: 0px 5px 0px 1px rgba(0, 0, 0, 0.237);
-    }
-
-    main .form .formContainer {
-        background-color: hsl(0, 0%, 98%);
-        height: fit-content;
         margin-bottom: 5em;
-        padding: 1.5em;
-        border-radius: .5em;
-        box-shadow: 0px 5px 0px 1px rgba(0, 0, 0, 0.237);
     }
-
-    main .form .formContainer form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+    
+    main#main #textContainer h1#text{
         width: 100%;
-    }
-
-    main .form .formContainer form table {
-        width: 100%;
-        background-color: none;
-        border-spacing: 10px;
-    }
-
-    main .form .formContainer form table tr th input {
-        border: 1px solid rgb(164, 164, 164);
-        border-radius: .3em;
-        padding: 1em;
-        width: 100%;
-        outline: none;
-    }
-
-    main .form .formContainer form table tr th input:hover {
-        border: 1px solid rgb(77, 77, 77);
-        padding: 1em;
-        width: 100%;
-    }
-
-    main .form .formContainer form table tr th input.btn {
-        background-color: var(--Green);
-        color: #fff;
-        font-family: 'Poppins', sans-serif;
+        margin-bottom: .5em;
         font-weight: 700;
-        border-radius: .5em;
-        border: none;
-        box-shadow: 0px 1px 2px 1px hsl(154, 59%, 41%),
-            0px -1px 2px 1px hsl(154, 59%, 41%);
-
+        font-size: 3.2rem;
     }
 
-    main .form .formContainer form table tr th input.btn:hover {
-        background-color: hsl(154, 59%, 41%);
+    main#main .form{
+        max-width: 550px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 5em;
     }
-
-    main .form .formContainer form #tableFooter {
-        text-align: center;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 400;
-        font-size: 10px;
-        width: 85%;
-        color: rgb(82, 82, 82);
-    }
-
-    main .form .formContainer form #tableFooter b {
-        color: var(--Red);
-    }
-
-
 }
